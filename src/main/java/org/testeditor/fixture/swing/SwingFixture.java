@@ -15,6 +15,8 @@
 package org.testeditor.fixture.swing;
 
 import java.awt.Component;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -37,13 +39,14 @@ import org.fest.swing.fixture.JTextComponentFixture;
 import org.fest.swing.launcher.ApplicationLauncher;
 import org.testeditor.fixture.core.elementlist.ElementListService;
 import org.testeditor.fixture.core.exceptions.ElementKeyNotFoundException;
+import org.testeditor.fixture.core.interaction.Fixture;
 import org.testeditor.fixture.core.utils.ExceptionUtils;
 
 /**
  * Fixture for communication via socket with swing agent.
  * 
  */
-public class SwingFixture {
+public class SwingFixture implements Fixture {
 	private static final Logger LOGGER = Logger.getLogger(SwingFixture.class);
 	private static Thread thread;
 	private Robot robot;
@@ -651,5 +654,25 @@ public class SwingFixture {
 	 */
 	public boolean checkIfSelectedItemIsNot(String elementListKey, String text) {
 		return !(text.equals(getSelectedComboBoxItemText(elementListKey)));
+	}
+
+	@Override
+	public String getTestName() {
+		return null;
+	}
+
+	@Override
+	public void postInvoke(Method arg0, Object arg1, Object... arg2) throws InvocationTargetException,
+			IllegalAccessException {
+	}
+
+	@Override
+	public void preInvoke(Method arg0, Object arg1, Object... arg2) throws InvocationTargetException,
+			IllegalAccessException {
+	}
+
+	@Override
+	public void setTestName(String arg0) {
+
 	}
 }
