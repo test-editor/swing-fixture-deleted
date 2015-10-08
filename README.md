@@ -1,7 +1,6 @@
 swing-fixture
 ===========
 
-Fixture used for testing SWING applications.
+NO LONGER VALID!
 
-You'll find our Wiki at https://testeditor.atlassian.net/wiki, our issue tracker at https://testeditor.atlassian.net and our homepage at http://testeditor.org.
-
+Merged into new repository: https://github.com/test-editor/fixtures
